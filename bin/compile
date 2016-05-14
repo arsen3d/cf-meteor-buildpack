@@ -71,6 +71,7 @@ build() {
   (
     cd $BUILD_DIR
     status "Building meteor bundle now  123"
+    npm i
     meteor build  --server http://localhost:3000 --directory ../deploy
     cd ../deploy/bundle/programs/server
     ls
