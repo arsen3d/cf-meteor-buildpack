@@ -78,7 +78,7 @@ build() {
     echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
     status "Running npm --i production"
     npm dedupe
-    npm i --production
+    ##npm i --production
     npm dedupe
     status "Building meteor bundle now  1234 with dedupe"
     mkdir ~/deploy
