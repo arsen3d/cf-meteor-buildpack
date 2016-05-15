@@ -85,7 +85,8 @@ build() {
     mkdir ~/deploy
     #TMPDIR=/meteor-temp meteor update
     df -h
-    env TMPDIR=~/temp meteor build  --server http://localhost:3000 --server-only --allow-incompatible-update --directory ~/deploy
+    #env TMPDIR=~/temp 
+    sudo meteor build  --server http://localhost:3000 --server-only --allow-incompatible-update --directory ~/deploy
     status "finished building in ~/deploy"
     df -h
     mv ~/deploy deploy
