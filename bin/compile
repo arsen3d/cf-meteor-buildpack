@@ -72,7 +72,7 @@ build() {
     cd $BUILD_DIR
     #status "Down greadig meteor to 1.3.1"
     #meteor --release 1.3.1
-    
+    df
     mkdir ~/temp
     #env TMPDIR=~/temp meteor update
     
@@ -81,9 +81,10 @@ build() {
     status "Building meteor bundle now  1234"
     mkdir ~/deploy
     #TMPDIR=/meteor-temp meteor update
-    
+    df
     env TMPDIR=~/temp meteor build  --server http://localhost:3000 --server-only --allow-incompatible-update --directory ~/deploy
     status "finished building in ~/deploy"
+    df
     mv ~/deploy deploy
     cd deploy/bundle/programs/server
     ls
