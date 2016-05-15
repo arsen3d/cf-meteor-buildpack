@@ -70,12 +70,12 @@ install_meteor() {
 build() {
   (
     cd $BUILD_DIR
-    status "Down greadig meteor to 1.3.1"
-    meteor --release 1.3.1
-    status "Running npm"
-    npm i
-    status "Building meteor bundle now  123"
-    meteor build  --server http://localhost:3000 --directory ../deploy
+    #status "Down greadig meteor to 1.3.1"
+    #meteor --release 1.3.1
+    status "Running npm --i production"
+    npm i --production
+    status "Building meteor bundle now  1234"
+    meteor build  --server http://localhost:3000 --server-only --allow-incompatible-update --directory ../deploy
     mv ../deploy deploy
     cd deploy/bundle/programs/server
     ls
