@@ -70,6 +70,8 @@ install_meteor() {
 build() {
   (
     cd $BUILD_DIR
+    status "Down greadig meteor to 1.3.1"
+    meteor --release 1.3.1
     status "Running npm"
     npm i
     status "Building meteor bundle now  123"
