@@ -75,11 +75,11 @@ build() {
     status "Running npm --i production"
     npm i --production
     status "Building meteor bundle now  1234"
-    mkdir /deploy
+    mkdir ~/deploy
     #TMPDIR=/meteor-temp meteor update
-    meteor build  --server http://localhost:3000 --server-only --allow-incompatible-update --directory /home/vcap/deploy
-    status "finished building in /deploy"
-    mv /home/vcap/deploy deploy
+    meteor build  --server http://localhost:3000 --server-only --allow-incompatible-update --directory ~/deploy
+    status "finished building in ~/deploy"
+    mv ~/deploy deploy
     cd deploy/bundle/programs/server
     ls
     status "Installing npm dependencies"
