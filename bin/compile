@@ -77,8 +77,10 @@ build() {
     #env TMPDIR=~/temp meteor update
     
     status "Running npm --i production"
+    npm dedupe
     npm i --production
-    status "Building meteor bundle now  1234"
+    npm dedupe
+    status "Building meteor bundle now  1234 with dedupe"
     mkdir ~/deploy
     #TMPDIR=/meteor-temp meteor update
     df
