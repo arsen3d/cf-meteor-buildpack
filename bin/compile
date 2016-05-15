@@ -75,7 +75,7 @@ build() {
     df
     mkdir ~/temp
     #env TMPDIR=~/temp meteor update
-    
+    echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
     status "Running npm --i production"
     npm dedupe
     npm i --production
